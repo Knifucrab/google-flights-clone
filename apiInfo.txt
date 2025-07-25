@@ -1,0 +1,4323 @@
+GET
+
+getNearByAirports
+Query Params
+
+lat
+*
+19.242218017578125
+String
+lng
+*
+72.85846156046128
+String
+locale
+(optional)
+en-US
+String
+Response language. Locale can be retrieved from the /api/v1/getLocal endpoint as id parameter.
+
+Code Snippets
+Example Responses
+Results
+Target:
+JavaScript
+Client:
+Axios
+
+import axios from 'axios';
+
+const options = {
+  method: 'GET',
+  url: 'https://sky-scrapper.p.rapidapi.com/api/v1/flights/getNearByAirports',
+  params: {
+    lat: '19.242218017578125',
+    lng: '72.85846156046128',
+    locale: 'en-US'
+  },
+  headers: {
+    'x-rapidapi-key': 'a7cd1015c3msh11ba2dde2669b91p1c820bjsn7178b8490ac2',
+    'x-rapidapi-host': 'sky-scrapper.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
+
+
+
+
+categories
+Travel
+icon
+Air Scraper
+
+
+// Example Response for getNearByAirports
+
+{
+  "status": true,
+  "timestamp": 1691008887676,
+  "data": {
+    "current": {
+      "presentation": {
+        "title": "Mumbai",
+        "suggestionTitle": "Mumbai (BOM)",
+        "subtitle": "India"
+      },
+      "navigation": {
+        "entityId": "95673320",
+        "entityType": "AIRPORT",
+        "localizedName": "Mumbai",
+        "relevantFlightParams": {
+          "skyId": "BOM",
+          "entityId": "95673320",
+          "flightPlaceType": "AIRPORT",
+          "localizedName": "Mumbai"
+        },
+        "relevantHotelParams": {
+          "entityId": "27539520",
+          "entityType": "CITY",
+          "localizedName": "Mumbai"
+        }
+      }
+    },
+    "nearby": [],
+    "recent": []
+  }
+}
+
+GET
+
+searchFlights (Version 2)
+
+Test Endpoint
+App
+Params(16)
+Headers(1)
+Body
+Authorizations
+App
+default-application_10846939
+X-RapidAPI-Key
+a7cd1015c3msh11ba2dde2669b91p1c820bjsn7178b8490ac2
+Request URL
+rapidapi.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Code Snippets
+Example Responses
+Results
+Target:
+JavaScript
+Client:
+Axios
+
+import axios from 'axios';
+
+const options = {
+  method: 'GET',
+  url: 'https://sky-scrapper.p.rapidapi.com/api/v2/flights/searchFlights',
+  params: {
+    originSkyId: 'LOND',
+    destinationSkyId: 'NYCA',
+    originEntityId: '27544008',
+    destinationEntityId: '27537542',
+    cabinClass: 'economy',
+    adults: '1',
+    sortBy: 'best',
+    currency: 'USD',
+    market: 'en-US',
+    countryCode: 'US'
+  },
+  headers: {
+    'x-rapidapi-key': 'a7cd1015c3msh11ba2dde2669b91p1c820bjsn7178b8490ac2',
+    'x-rapidapi-host': 'sky-scrapper.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
+
+
+categories
+Travel
+icon
+Air Scraper
+
+//Example response for searchFlights
+
+{
+  "status": true,
+  "timestamp": 1691008981566,
+  "sessionId": "25cee707-a873-4d0a-aeb2-4128a7ca0258",
+  "data": {
+    "context": {
+      "status": "incomplete",
+      "totalResults": 10
+    },
+    "itineraries": [
+      {
+        "id": "13542-2402201235--30598-0-12712-2402201550|12712-2402221810--30598-0-13542-2402230600",
+        "price": {
+          "raw": 419.18,
+          "formatted": "$420"
+        },
+        "legs": [
+          {
+            "id": "13542-2402201235--30598-0-12712-2402201550",
+            "origin": {
+              "id": "LGW",
+              "name": "London Gatwick",
+              "displayCode": "LGW",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 495,
+            "stopCount": 0,
+            "isSmallestStops": false,
+            "departure": "2024-02-20T12:35:00",
+            "arrival": "2024-02-20T15:50:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -30598,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/I%29.png",
+                  "name": "Norse Atlantic Airways (UK)"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13542-12712-2402201235-2402201550--30598",
+                "origin": {
+                  "flightPlaceId": "LGW",
+                  "displayCode": "LGW",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Gatwick",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T12:35:00",
+                "arrival": "2024-02-20T15:50:00",
+                "durationInMinutes": 495,
+                "flightNumber": "701",
+                "marketingCarrier": {
+                  "id": -30598,
+                  "name": "Norse Atlantic Airways (UK)",
+                  "alternateId": "I)",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -30598,
+                  "name": "Norse Atlantic Airways (UK)",
+                  "alternateId": "I)",
+                  "allianceId": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "12712-2402221810--30598-0-13542-2402230600",
+            "origin": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LGW",
+              "name": "London Gatwick",
+              "displayCode": "LGW",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 410,
+            "stopCount": 0,
+            "isSmallestStops": false,
+            "departure": "2024-02-22T18:10:00",
+            "arrival": "2024-02-23T06:00:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -30598,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/I%29.png",
+                  "name": "Norse Atlantic Airways (UK)"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "12712-13542-2402221810-2402230600--30598",
+                "origin": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "LGW",
+                  "displayCode": "LGW",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Gatwick",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-22T18:10:00",
+                "arrival": "2024-02-23T06:00:00",
+                "durationInMinutes": 410,
+                "flightNumber": "702",
+                "marketingCarrier": {
+                  "id": -30598,
+                  "name": "Norse Atlantic Airways (UK)",
+                  "alternateId": "I)",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -30598,
+                  "name": "Norse Atlantic Airways (UK)",
+                  "alternateId": "I)",
+                  "allianceId": 0
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "eco": {
+          "ecoContenderDelta": 13.232994
+        },
+        "tags": [
+          "cheapest",
+          "shortest"
+        ],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.998502
+      },
+      {
+        "id": "13554-2402200750--32753-1-12712-2402201355|12712-2402222110--32753-1-13554-2402231130",
+        "price": {
+          "raw": 527.97,
+          "formatted": "$528"
+        },
+        "legs": [
+          {
+            "id": "13554-2402200750--32753-1-12712-2402201355",
+            "origin": {
+              "id": "LHR",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 665,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-20T07:50:00",
+            "arrival": "2024-02-20T13:55:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-11154-2402200750-2402200910--32753",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T07:50:00",
+                "arrival": "2024-02-20T09:10:00",
+                "durationInMinutes": 80,
+                "flightNumber": "151",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-12712-2402201110-2402201355--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T11:10:00",
+                "arrival": "2024-02-20T13:55:00",
+                "durationInMinutes": 465,
+                "flightNumber": "105",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "12712-2402222110--32753-1-13554-2402231130",
+            "origin": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 560,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-22T21:10:00",
+            "arrival": "2024-02-23T11:30:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "12712-11154-2402222110-2402230850--32753",
+                "origin": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-22T21:10:00",
+                "arrival": "2024-02-23T08:50:00",
+                "durationInMinutes": 400,
+                "flightNumber": "106",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-13554-2402231010-2402231130--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-23T10:10:00",
+                "arrival": "2024-02-23T11:30:00",
+                "durationInMinutes": 80,
+                "flightNumber": "158",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "tags": [
+          "second_cheapest",
+          "second_shortest"
+        ],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.58567
+      },
+      {
+        "id": "13554-2402200750--32753-1-12712-2402201355|12712-2402221700--32753-1-13554-2402230805",
+        "price": {
+          "raw": 527.97,
+          "formatted": "$528"
+        },
+        "legs": [
+          {
+            "id": "13554-2402200750--32753-1-12712-2402201355",
+            "origin": {
+              "id": "LHR",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 665,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-20T07:50:00",
+            "arrival": "2024-02-20T13:55:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-11154-2402200750-2402200910--32753",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T07:50:00",
+                "arrival": "2024-02-20T09:10:00",
+                "durationInMinutes": 80,
+                "flightNumber": "151",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-12712-2402201110-2402201355--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T11:10:00",
+                "arrival": "2024-02-20T13:55:00",
+                "durationInMinutes": 465,
+                "flightNumber": "105",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "12712-2402221700--32753-1-13554-2402230805",
+            "origin": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 605,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-22T17:00:00",
+            "arrival": "2024-02-23T08:05:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "12712-11154-2402221700-2402230425--32753",
+                "origin": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-22T17:00:00",
+                "arrival": "2024-02-23T04:25:00",
+                "durationInMinutes": 385,
+                "flightNumber": "104",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-13554-2402230640-2402230805--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-23T06:40:00",
+                "arrival": "2024-02-23T08:05:00",
+                "durationInMinutes": 85,
+                "flightNumber": "152",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "tags": [
+          "second_cheapest"
+        ],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.564918
+      },
+      {
+        "id": "13542-2402201300--32753-1-12712-2402201940|12712-2402221700--32753-1-13542-2402230755",
+        "price": {
+          "raw": 529.03,
+          "formatted": "$530"
+        },
+        "legs": [
+          {
+            "id": "13542-2402201300--32753-1-12712-2402201940",
+            "origin": {
+              "id": "LGW",
+              "name": "London Gatwick",
+              "displayCode": "LGW",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 700,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-20T13:00:00",
+            "arrival": "2024-02-20T19:40:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13542-11154-2402201300-2402201425--32753",
+                "origin": {
+                  "flightPlaceId": "LGW",
+                  "displayCode": "LGW",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Gatwick",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T13:00:00",
+                "arrival": "2024-02-20T14:25:00",
+                "durationInMinutes": 85,
+                "flightNumber": "237",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-12712-2402201640-2402201940--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T16:40:00",
+                "arrival": "2024-02-20T19:40:00",
+                "durationInMinutes": 480,
+                "flightNumber": "107",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "12712-2402221700--32753-1-13542-2402230755",
+            "origin": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LGW",
+              "name": "London Gatwick",
+              "displayCode": "LGW",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 595,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-22T17:00:00",
+            "arrival": "2024-02-23T07:55:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "12712-11154-2402221700-2402230425--32753",
+                "origin": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-22T17:00:00",
+                "arrival": "2024-02-23T04:25:00",
+                "durationInMinutes": 385,
+                "flightNumber": "104",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-13542-2402230630-2402230755--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "LGW",
+                  "displayCode": "LGW",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Gatwick",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-23T06:30:00",
+                "arrival": "2024-02-23T07:55:00",
+                "durationInMinutes": 85,
+                "flightNumber": "230",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "tags": [
+          "third_cheapest"
+        ],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.552902
+      },
+      {
+        "id": "13554-2402201215--32753-1-12712-2402201940|12712-2402222110--32753-1-13554-2402231130",
+        "price": {
+          "raw": 527.97,
+          "formatted": "$528"
+        },
+        "legs": [
+          {
+            "id": "13554-2402201215--32753-1-12712-2402201940",
+            "origin": {
+              "id": "LHR",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 745,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-20T12:15:00",
+            "arrival": "2024-02-20T19:40:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-11154-2402201215-2402201335--32753",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T12:15:00",
+                "arrival": "2024-02-20T13:35:00",
+                "durationInMinutes": 80,
+                "flightNumber": "159",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-12712-2402201640-2402201940--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T16:40:00",
+                "arrival": "2024-02-20T19:40:00",
+                "durationInMinutes": 480,
+                "flightNumber": "107",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "12712-2402222110--32753-1-13554-2402231130",
+            "origin": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 560,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-22T21:10:00",
+            "arrival": "2024-02-23T11:30:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "12712-11154-2402222110-2402230850--32753",
+                "origin": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-22T21:10:00",
+                "arrival": "2024-02-23T08:50:00",
+                "durationInMinutes": 400,
+                "flightNumber": "106",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-13554-2402231010-2402231130--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-23T10:10:00",
+                "arrival": "2024-02-23T11:30:00",
+                "durationInMinutes": 80,
+                "flightNumber": "158",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "tags": [
+          "second_cheapest"
+        ],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.549767
+      },
+      {
+        "id": "13542-2402201300--32753-1-12712-2402201940|12712-2402222110--32753-1-13542-2402231220",
+        "price": {
+          "raw": 529.03,
+          "formatted": "$530"
+        },
+        "legs": [
+          {
+            "id": "13542-2402201300--32753-1-12712-2402201940",
+            "origin": {
+              "id": "LGW",
+              "name": "London Gatwick",
+              "displayCode": "LGW",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 700,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-20T13:00:00",
+            "arrival": "2024-02-20T19:40:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13542-11154-2402201300-2402201425--32753",
+                "origin": {
+                  "flightPlaceId": "LGW",
+                  "displayCode": "LGW",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Gatwick",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T13:00:00",
+                "arrival": "2024-02-20T14:25:00",
+                "durationInMinutes": 85,
+                "flightNumber": "237",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-12712-2402201640-2402201940--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T16:40:00",
+                "arrival": "2024-02-20T19:40:00",
+                "durationInMinutes": 480,
+                "flightNumber": "107",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "12712-2402222110--32753-1-13542-2402231220",
+            "origin": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LGW",
+              "name": "London Gatwick",
+              "displayCode": "LGW",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 610,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-22T21:10:00",
+            "arrival": "2024-02-23T12:20:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "12712-11154-2402222110-2402230850--32753",
+                "origin": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-22T21:10:00",
+                "arrival": "2024-02-23T08:50:00",
+                "durationInMinutes": 400,
+                "flightNumber": "106",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-13542-2402231055-2402231220--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "LGW",
+                  "displayCode": "LGW",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Gatwick",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-23T10:55:00",
+                "arrival": "2024-02-23T12:20:00",
+                "durationInMinutes": 85,
+                "flightNumber": "236",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "tags": [
+          "third_cheapest"
+        ],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.546571
+      },
+      {
+        "id": "13554-2402201215--32753-1-12712-2402201940|12712-2402221700--32753-1-13554-2402230805",
+        "price": {
+          "raw": 527.97,
+          "formatted": "$528"
+        },
+        "legs": [
+          {
+            "id": "13554-2402201215--32753-1-12712-2402201940",
+            "origin": {
+              "id": "LHR",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 745,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-20T12:15:00",
+            "arrival": "2024-02-20T19:40:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-11154-2402201215-2402201335--32753",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T12:15:00",
+                "arrival": "2024-02-20T13:35:00",
+                "durationInMinutes": 80,
+                "flightNumber": "159",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-12712-2402201640-2402201940--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T16:40:00",
+                "arrival": "2024-02-20T19:40:00",
+                "durationInMinutes": 480,
+                "flightNumber": "107",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "12712-2402221700--32753-1-13554-2402230805",
+            "origin": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 605,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-22T17:00:00",
+            "arrival": "2024-02-23T08:05:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "12712-11154-2402221700-2402230425--32753",
+                "origin": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-22T17:00:00",
+                "arrival": "2024-02-23T04:25:00",
+                "durationInMinutes": 385,
+                "flightNumber": "104",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-13554-2402230640-2402230805--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-23T06:40:00",
+                "arrival": "2024-02-23T08:05:00",
+                "durationInMinutes": 85,
+                "flightNumber": "152",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "tags": [
+          "second_cheapest"
+        ],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.531441
+      },
+      {
+        "id": "13554-2402200950--32753-1-11442-2402201605|11442-2402221735--32753-1-13554-2402230805",
+        "price": {
+          "raw": 578.71,
+          "formatted": "$579"
+        },
+        "legs": [
+          {
+            "id": "13554-2402200950--32753-1-11442-2402201605",
+            "origin": {
+              "id": "LHR",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "EWR",
+              "name": "New York Newark",
+              "displayCode": "EWR",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 675,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-20T09:50:00",
+            "arrival": "2024-02-20T16:05:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-11154-2402200950-2402201115--32753",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T09:50:00",
+                "arrival": "2024-02-20T11:15:00",
+                "durationInMinutes": 85,
+                "flightNumber": "155",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-11442-2402201305-2402201605--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "EWR",
+                  "displayCode": "EWR",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York Newark",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T13:05:00",
+                "arrival": "2024-02-20T16:05:00",
+                "durationInMinutes": 480,
+                "flightNumber": "101",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "11442-2402221735--32753-1-13554-2402230805",
+            "origin": {
+              "id": "EWR",
+              "name": "New York Newark",
+              "displayCode": "EWR",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 570,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-22T17:35:00",
+            "arrival": "2024-02-23T08:05:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "11442-11154-2402221735-2402230510--32753",
+                "origin": {
+                  "flightPlaceId": "EWR",
+                  "displayCode": "EWR",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York Newark",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-22T17:35:00",
+                "arrival": "2024-02-23T05:10:00",
+                "durationInMinutes": 395,
+                "flightNumber": "100",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-13554-2402230640-2402230805--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-23T06:40:00",
+                "arrival": "2024-02-23T08:05:00",
+                "durationInMinutes": 85,
+                "flightNumber": "152",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "tags": [
+          "third_shortest"
+        ],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.525736
+      },
+      {
+        "id": "13542-2402201105--32753-1-12712-2402201940|12712-2402221700--32753-1-13542-2402230755",
+        "price": {
+          "raw": 529.03,
+          "formatted": "$530"
+        },
+        "legs": [
+          {
+            "id": "13542-2402201105--32753-1-12712-2402201940",
+            "origin": {
+              "id": "LGW",
+              "name": "London Gatwick",
+              "displayCode": "LGW",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 815,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-20T11:05:00",
+            "arrival": "2024-02-20T19:40:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13542-11154-2402201105-2402201230--32753",
+                "origin": {
+                  "flightPlaceId": "LGW",
+                  "displayCode": "LGW",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Gatwick",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T11:05:00",
+                "arrival": "2024-02-20T12:30:00",
+                "durationInMinutes": 85,
+                "flightNumber": "233",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-12712-2402201640-2402201940--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T16:40:00",
+                "arrival": "2024-02-20T19:40:00",
+                "durationInMinutes": 480,
+                "flightNumber": "107",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "12712-2402221700--32753-1-13542-2402230755",
+            "origin": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LGW",
+              "name": "London Gatwick",
+              "displayCode": "LGW",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 595,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-22T17:00:00",
+            "arrival": "2024-02-23T07:55:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "12712-11154-2402221700-2402230425--32753",
+                "origin": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-22T17:00:00",
+                "arrival": "2024-02-23T04:25:00",
+                "durationInMinutes": 385,
+                "flightNumber": "104",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-13542-2402230630-2402230755--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "LGW",
+                  "displayCode": "LGW",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Gatwick",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-23T06:30:00",
+                "arrival": "2024-02-23T07:55:00",
+                "durationInMinutes": 85,
+                "flightNumber": "230",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "tags": [
+          "third_cheapest"
+        ],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.507807
+      },
+      {
+        "id": "13542-2402201105--32753-1-12712-2402201940|12712-2402222110--32753-1-13542-2402231220",
+        "price": {
+          "raw": 529.03,
+          "formatted": "$530"
+        },
+        "legs": [
+          {
+            "id": "13542-2402201105--32753-1-12712-2402201940",
+            "origin": {
+              "id": "LGW",
+              "name": "London Gatwick",
+              "displayCode": "LGW",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 815,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-20T11:05:00",
+            "arrival": "2024-02-20T19:40:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13542-11154-2402201105-2402201230--32753",
+                "origin": {
+                  "flightPlaceId": "LGW",
+                  "displayCode": "LGW",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Gatwick",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T11:05:00",
+                "arrival": "2024-02-20T12:30:00",
+                "durationInMinutes": 85,
+                "flightNumber": "233",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-12712-2402201640-2402201940--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-20T16:40:00",
+                "arrival": "2024-02-20T19:40:00",
+                "durationInMinutes": 480,
+                "flightNumber": "107",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "12712-2402222110--32753-1-13542-2402231220",
+            "origin": {
+              "id": "JFK",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LGW",
+              "name": "London Gatwick",
+              "displayCode": "LGW",
+              "city": "London",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 610,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2024-02-22T21:10:00",
+            "arrival": "2024-02-23T12:20:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "12712-11154-2402222110-2402230850--32753",
+                "origin": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-22T21:10:00",
+                "arrival": "2024-02-23T08:50:00",
+                "durationInMinutes": 400,
+                "flightNumber": "106",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              },
+              {
+                "id": "11154-13542-2402231055-2402231220--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport"
+                },
+                "destination": {
+                  "flightPlaceId": "LGW",
+                  "displayCode": "LGW",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Gatwick",
+                  "type": "Airport"
+                },
+                "departure": "2024-02-23T10:55:00",
+                "arrival": "2024-02-23T12:20:00",
+                "durationInMinutes": 85,
+                "flightNumber": "236",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "tags": [
+          "third_cheapest"
+        ],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.502462
+      }
+    ],
+    "messages": [],
+    "filterStats": {
+      "duration": {
+        "min": 495,
+        "max": 815
+      },
+      "airports": [
+        {
+          "city": "New York",
+          "airports": [
+            {
+              "id": "JFK",
+              "name": "New York John F. Kennedy"
+            },
+            {
+              "id": "EWR",
+              "name": "New York Newark"
+            }
+          ]
+        },
+        {
+          "city": "London",
+          "airports": [
+            {
+              "id": "LGW",
+              "name": "London Gatwick"
+            },
+            {
+              "id": "LHR",
+              "name": "London Heathrow"
+            }
+          ]
+        }
+      ],
+      "carriers": [
+        {
+          "id": -32753,
+          "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+          "name": "Aer Lingus"
+        },
+        {
+          "id": -30598,
+          "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/I%29.png",
+          "name": "Norse Atlantic Airways (UK)"
+        }
+      ],
+      "stopPrices": {
+        "direct": {
+          "isPresent": true,
+          "formattedPrice": "$420"
+        },
+        "one": {
+          "isPresent": true,
+          "formattedPrice": "$528"
+        },
+        "twoOrMore": {
+          "isPresent": false
+        }
+      }
+    }
+  }
+}
+
+
+GET
+
+searchFlightsComplete
+
+Test Endpoint
+App
+Params(16)
+Headers(1)
+Body
+Authorizations
+Query Params
+
+originSkyId
+*
+LOND
+String
+The originSkyId code can be extracted from the Search Airport API in the Flights collection.
+
+destinationSkyId
+*
+NYCA
+String
+The destinationSkyId code can be extracted from the Search Airport API in the Flights collection.
+
+originEntityId
+*
+27544008
+String
+The originEntityId code can be extracted from the Search Airport API in the Flights collection.
+
+destinationEntityId
+*
+27537542
+String
+The destinationEntityId code can be extracted from the Search Airport API in the Flights collection.
+
+date
+*
+
+mm/dd/yyyy
+Date (yyyy-mm-dd)
+Departure or travel date. Format: YYYY-MM-DD
+
+returnDate
+(optional)
+
+mm/dd/yyyy
+Date (yyyy-mm-dd)
+Return date. Format: YYYY-MM-DD
+
+cabinClass
+(optional)
+economy
+Enum
+Cabin class Ex: economy Default value: economy
+
+economy: Economy premium_economy: Premium Economy business: Business first: First
+
+adults
+(optional)
+1
+Number
+Adults: 12+ years Default value: 1 Ex: 2
+
+Default: 1
+childrens
+(optional)
+Number
+Children: 2-12 years Default value: 0 Ex: 2
+
+Default: 0
+infants
+(optional)
+Number
+Infants: Under 2 years Default value: 0 Ex: 1
+
+Default: 0
+sortBy
+(optional)
+best
+Enum
+Sort By Ex: best Default value: best
+
+best : Best price_high : Cheapest fastest : Fastest outbound_take_off_time : Outbound Take Off Time outbound_landing_time : Outbound Landing Time return_take_off_time : Return Take Off Time return_landing_time : Return Landinf Time
+
+limit
+(optional)
+Number
+Set a limit on the amount of records. Example: 100
+
+Default: 0
+carriersIds
+(optional)
+String
+Filter the flight itinerary data by the carrier.If there are multiple carriers that need to be passed, they should be passed in comma-separated format. Example: -32672,-31435
+
+currency
+(optional)
+USD
+String
+currency can be retrieved from api/v1/getConfig endpoint(data->currency) Default value: USD Ex: USD
+
+market
+(optional)
+en-US
+String
+market can be retrieved from api/v1/getConfig endpoint(data->market) Default value: en-US Ex: en-US
+
+countryCode
+(optional)
+US
+String
+countryCode can be retrieved from api/v1/getConfig endpoint(data->countryCode) Default value: US Ex: US
+
+Code Snippets
+Example Responses
+Results
+Target:
+JavaScript
+Client:
+Axios
+
+import axios from 'axios';
+
+const options = {
+  method: 'GET',
+  url: 'https://sky-scrapper.p.rapidapi.com/api/v2/flights/searchFlightsComplete',
+  params: {
+    originSkyId: 'LOND',
+    destinationSkyId: 'NYCA',
+    originEntityId: '27544008',
+    destinationEntityId: '27537542',
+    cabinClass: 'economy',
+    adults: '1',
+    sortBy: 'best',
+    currency: 'USD',
+    market: 'en-US',
+    countryCode: 'US'
+  },
+  headers: {
+    'x-rapidapi-key': 'a7cd1015c3msh11ba2dde2669b91p1c820bjsn7178b8490ac2',
+    'x-rapidapi-host': 'sky-scrapper.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
+
+
+categories
+Travel
+icon
+Air Scraper
+
+
+
+
+GET
+
+getFlightDetails
+
+Test Endpoint
+App
+Params(11)
+Headers(1)
+Body
+Authorizations
+Query Params
+
+itineraryId
+*
+String
+itineraryId can be retrieved from Search Flights API in Flights collection as id.
+
+legs
+*
+JSON
+The legs must contain the origin, destination and date in object format and must be passed in an array. EXAMPLE: [ { 'origin': 'LHR', 'destination': 'JFK', 'date': '2024-01-07' }, ... ] Note: If there are multiple stops, there should be more leg objects in the array. And the legs have to be the same as the Search Flights API in Flights collection.
+
+sessionId
+*
+String
+Session id Required: true sessionId can be retrieved from api/v2/flights/searchFlights or api/v1/flights/searchFlights or api/v2/flights/searchFlightsComplete endpoint(data->context->sessionId) Example:- ClQIARJQCk4KJGVkMmQzNmM4LTBmZTMtNDMyMC05MDQ4LTEzNjkyZWU4ZGViZRACGiQxNDMwMzY4Yy1lZjJkLTQwY2UtYjUyZS1iYjQ5YzQ4Y2JiNDc=
+
+adults
+(optional)
+1
+Number
+Adults: 12+ years Default value: 1 Ex: 2
+
+Default: 1
+children
+(optional)
+Number
+Children: 2-12 years Default value: 0 Ex: 2
+
+Default: 0
+infants
+(optional)
+Number
+Infants: Under 2 years Default value: 0 Ex: 1
+
+Default: 0
+currency
+(optional)
+USD
+String
+currency can be retrieved from api/v1/getConfig endpoint(data->currency) Default value: USD Ex: USD
+
+locale
+(optional)
+en-US
+String
+locale can be retrieved from api/v1/getLocale endpoint(data->id) Default value: en-US Ex: en-US
+
+market
+(optional)
+en-US
+String
+market can be retrieved from api/v1/getConfig endpoint(data->market) Default value: en-US Ex: en-US
+
+cabinClass
+(optional)
+economy
+Enum
+countryCode
+(optional)
+US
+String
+countryCode can be retrieved from api/v1/getConfig endpoint(data->countryCode) Default value: US Ex: US
+
+Code Snippets
+Example Responses
+Results
+Target:
+JavaScript
+Client:
+Axios
+
+import axios from 'axios';
+
+const options = {
+  method: 'GET',
+  url: 'https://sky-scrapper.p.rapidapi.com/api/v1/flights/getFlightDetails',
+  params: {
+    legs: '[{"destination":"LOND","origin":"LAXA","date":"2024-04-11"}]',
+    adults: '1',
+    currency: 'USD',
+    locale: 'en-US',
+    market: 'en-US',
+    cabinClass: 'economy',
+    countryCode: 'US'
+  },
+  headers: {
+    'x-rapidapi-key': 'a7cd1015c3msh11ba2dde2669b91p1c820bjsn7178b8490ac2',
+    'x-rapidapi-host': 'sky-scrapper.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
+
+Query Params
+
+originSkyId
+*
+BOM
+String
+The originSkyId code can be extracted from the Search Airport API in the Flights collection.
+
+destinationSkyId
+*
+JFK
+String
+The destinationSkyId code can be extracted from the Search Airport API in the Flights collection.
+
+fromDate
+*
+
+02/20/2024
+Date (yyyy-mm-dd)
+Journey date. Format: YYYY-MM-DD
+
+toDate
+(optional)
+
+mm/dd/yyyy
+Date (yyyy-mm-dd)
+Return date. Format: YYYY-MM-DD
+
+currency
+(optional)
+USD
+String
+currency can be retrieved from api/v1/getConfig endpoint(data->currency) Default value: USD Ex: USD
+
+Code Snippets
+Example Responses
+Results
+Target:
+JavaScript
+Client:
+Axios
+
+import axios from 'axios';
+
+const options = {
+  method: 'GET',
+  url: 'https://sky-scrapper.p.rapidapi.com/api/v1/flights/getPriceCalendar',
+  params: {
+    originSkyId: 'BOM',
+    destinationSkyId: 'JFK',
+    fromDate: '2024-02-20',
+    currency: 'USD'
+  },
+  headers: {
+    'x-rapidapi-key': 'a7cd1015c3msh11ba2dde2669b91p1c820bjsn7178b8490ac2',
+    'x-rapidapi-host': 'sky-scrapper.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
+
+
+categories
+Travel
+icon
+Air Scraper
+
+// Example responses for getFlightDetails
+
+{
+  "status": true,
+  "timestamp": 1691009267165,
+  "data": {
+    "itinerary": {
+      "legs": [
+        {
+          "id": "13542-2402201235--30598-0-12712-2402201550",
+          "origin": {
+            "id": "13542",
+            "name": "London Gatwick",
+            "displayCode": "LGW",
+            "city": "London"
+          },
+          "destination": {
+            "id": "12712",
+            "name": "New York John F. Kennedy",
+            "displayCode": "JFK",
+            "city": "New York"
+          },
+          "segments": [
+            {
+              "id": "13542-12712-2402201235-2402201550--30598",
+              "origin": {
+                "id": "13542",
+                "name": "London Gatwick",
+                "displayCode": "LGW",
+                "city": "London"
+              },
+              "destination": {
+                "id": "12712",
+                "name": "New York John F. Kennedy",
+                "displayCode": "JFK",
+                "city": "New York"
+              },
+              "duration": 495,
+              "dayChange": 0,
+              "flightNumber": "Z0701",
+              "departure": "2024-02-20T12:35:00",
+              "arrival": "2024-02-20T15:50:00",
+              "marketingCarrier": {
+                "id": "-30598",
+                "name": "Norse Atlantic Airways (UK)",
+                "displayCode": "Z0",
+                "displayCodeType": "IATA",
+                "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                "altId": "I)"
+              },
+              "operatingCarrier": {
+                "id": "-30598",
+                "name": "Norse Atlantic Airways (UK)",
+                "displayCode": "Z0",
+                "displayCodeType": "IATA",
+                "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                "altId": "I)"
+              }
+            }
+          ],
+          "duration": 495,
+          "stopCount": 0,
+          "departure": "2024-02-20T12:35:00",
+          "arrival": "2024-02-20T15:50:00",
+          "dayChange": 0
+        }
+      ],
+      "pricingOptions": [
+        {
+          "agents": [
+            {
+              "id": "arus",
+              "name": "Mytrip",
+              "isCarrier": false,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/arus/1/13542.12712.2024-02-20/air/trava/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|-|-|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=270.99&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mJJLCotFmLmuKUixczRo6vQcP38OjYjJgVGAC7vlo8cAAAA|8736221224533380069|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:04&pqid=true",
+              "price": 270.99,
+              "rating": {
+                "value": 3.01,
+                "count": 9532
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 270.99
+        },
+        {
+          "agents": [
+            {
+              "id": "edus",
+              "name": "eDreams",
+              "isCarrier": false,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/edus/1/13542.12712.2024-02-20/air/trava/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|-|-|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=272.81&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mJJTSktFmLmuKUixczRo6vQcP38OjYjJgVGAEeFKAocAAAA|589607429926384355|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:08&pqid=true",
+              "price": 272.81,
+              "rating": {
+                "value": 2.63,
+                "count": 10415
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 272.81
+        },
+        {
+          "agents": [
+            {
+              "id": "xpus",
+              "name": "Expedia",
+              "isCarrier": false,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/xpus/1/13542.12712.2024-02-20/air/trava/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|QEL|Q|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=277.98&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mKpKCgtFmLmuKUixczRo6vQcP38OjYjJgVGAGMaQ04cAAAA|-2471706304482540542|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:15&pqid=true",
+              "price": 277.98,
+              "rating": {
+                "value": 3.96,
+                "count": 12563
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 277.98
+        },
+        {
+          "agents": [
+            {
+              "id": "noaa",
+              "name": "Norse Atlantic Airways",
+              "isCarrier": true,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/noaa/1/13542.12712.2024-02-20/air/airli/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|-|-|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=277.98&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mLJy09MFGLmeJYpxcyxIlmh4fr5dWxGTAqMAAEFxrgcAAAA|-2328735851777417191|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:01&pqid=false",
+              "price": 277.98,
+              "rating": {
+                "value": 3.61,
+                "count": 689
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 277.98
+        },
+        {
+          "agents": [
+            {
+              "id": "orbz",
+              "name": "Orbitz",
+              "isCarrier": false,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/orbz/1/13542.12712.2024-02-20/air/trava/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|QEL|Q|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=277.98&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mLJL0qqEmLmuKUixczRo6vQcP38OjYjJgVGACl_oJscAAAA|-2471706304482540542|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:15&pqid=true",
+              "price": 277.98,
+              "rating": {
+                "value": 1.89,
+                "count": 1882
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 277.98
+        },
+        {
+          "agents": [
+            {
+              "id": "tlcy",
+              "name": "Travelocity",
+              "isCarrier": false,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/tlcy/1/13542.12712.2024-02-20/air/trava/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|QEL|Q|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=277.98&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mIpyUmuFGLmuKUixczRo6vQcP38OjYjJgVGALHE7-4cAAAA|-2471706304482540542|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:17&pqid=true",
+              "price": 277.98,
+              "rating": {
+                "value": 1.67,
+                "count": 467
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 277.98
+        },
+        {
+          "agents": [
+            {
+              "id": "skyp",
+              "name": "Kiwi.com",
+              "isCarrier": false,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/skyp/1/13542.12712.2024-02-20/air/trava/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|-|-|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=280.00&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mIpzq4sEGLmuKUixczRo6vQcP38OjYjJgVGAEFEgi0cAAAA|-2328735851777417191|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:09&pqid=true",
+              "price": 280,
+              "rating": {
+                "value": 2.92,
+                "count": 12352
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 280
+        },
+        {
+          "agents": [
+            {
+              "id": "pcln",
+              "name": "Priceline",
+              "isCarrier": false,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/pcln/1/13542.12712.2024-02-20/air/trava/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|QEL|Q|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=279.08&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mIpSM7JE2LmuKUixczRo6vQcP38OjYjJgVGAJINcA8cAAAA|836989890372451239|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:04&pqid=false",
+              "price": 279.08,
+              "rating": {
+                "value": 1.87,
+                "count": 2029
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 279.08
+        },
+        {
+          "agents": [
+            {
+              "id": "cust",
+              "name": "Trip.com",
+              "isCarrier": false,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/cust/1/13542.12712.2024-02-20/air/trava/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|-|-|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=282.00&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mJJLi0uEWLmuKUixczRo6vQcP38OjYjJgVGAFdnAjscAAAA|-1392380853158557016|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:08&pqid=true",
+              "price": 282,
+              "rating": {
+                "value": 3.67,
+                "count": 30283
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 282
+        },
+        {
+          "agents": [
+            {
+              "id": "jfus",
+              "name": "JustFly",
+              "isCarrier": false,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/jfus/1/13542.12712.2024-02-20/air/trava/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|QEL|Q|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=282.98&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mLJSistFmLmuKUixczRo6vQcP38OjYjJgVGAGddqwQcAAAA|836989890372451239|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:06&pqid=false",
+              "price": 282.98,
+              "rating": {
+                "value": 3.38,
+                "count": 6951
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 282.98
+        },
+        {
+          "agents": [
+            {
+              "id": "chpo",
+              "name": "CheapOair",
+              "isCarrier": false,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/chpo/1/13542.12712.2024-02-20/air/trava/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|-|-|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=283.98&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mJJzijIF2LmuKUixczRo6vQcP38OjYjJgVGAEPdlo0cAAAA|-2328735851777417191|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:11&pqid=false",
+              "price": 283.98,
+              "rating": {
+                "value": 2.57,
+                "count": 3276
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 283.98
+        },
+        {
+          "agents": [
+            {
+              "id": "bcom",
+              "name": "Booking.com",
+              "isCarrier": false,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/bcom/1/13542.12712.2024-02-20/air/trava/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|-|-|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=285.99&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mJJSs7PFWLmuKUixczRo6vQcP38OjYjJgVGAAORRuscAAAA|3610398678000586459|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:04&pqid=true",
+              "price": 285.99,
+              "rating": {
+                "value": 3.63,
+                "count": 7583
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 285.99
+        },
+        {
+          "agents": [
+            {
+              "id": "vaya",
+              "name": "BudgetAir",
+              "isCarrier": false,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/vaya/1/13542.12712.2024-02-20/air/trava/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|-|-|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=286.00&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mIpS6xMFGLmuKUixczRo6vQcP38OjYjJgVGAIS-sPwcAAAA|589607429926384355|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:16&pqid=true",
+              "price": 286,
+              "rating": {
+                "value": 2.85,
+                "count": 5155
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 286
+        },
+        {
+          "agents": [
+            {
+              "id": "bfus",
+              "name": "Bravofly",
+              "isCarrier": false,
+              "bookingProposition": "PBOOK",
+              "url": "https://www.skyscanner.net/transport_deeplink/4.0/US/en-US/USD/bfus/1/13542.12712.2024-02-20/air/trava/flights?itinerary=flight|-30598|701|13542|2024-02-20T12:35|12712|2024-02-20T15:50|495|-|Q|-&carriers=-30598&operators=-30598&passengers=1&channel=iphone&cabin_class=economy&fps_session_id=423a83ad-3665-45a4-b02d-d2890051d50f&ticket_price=287.37&is_npt=false&is_multipart=false&client_id=skyscanner_app&request_id=dccc6832-c515-44a9-8e9e-93a7c7b2f3b7&q_ids=H4sIAAAAAAAA_-OS4mJJSistFmLmuKUixczRo6vQcP38OjYjJgVGANlhptYcAAAA|-6737075005787650101|2&q_sources=JACQUARD&commercial_filters=false&q_datetime_utc=2023-08-02T20:45:02&pqid=true",
+              "price": 287.37,
+              "rating": {
+                "value": 2.69,
+                "count": 2763
+              },
+              "updateStatus": "CURRENT",
+              "segments": [
+                {
+                  "id": "13542-12712-2402201235-2402201550--30598",
+                  "origin": {
+                    "id": "13542",
+                    "name": "London Gatwick",
+                    "displayCode": "LGW",
+                    "city": "London"
+                  },
+                  "destination": {
+                    "id": "12712",
+                    "name": "New York John F. Kennedy",
+                    "displayCode": "JFK",
+                    "city": "New York"
+                  },
+                  "duration": 495,
+                  "dayChange": 0,
+                  "flightNumber": "Z0701",
+                  "departure": "2024-02-20T12:35:00",
+                  "arrival": "2024-02-20T15:50:00",
+                  "marketingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  },
+                  "operatingCarrier": {
+                    "id": "-30598",
+                    "name": "Norse Atlantic Airways (UK)",
+                    "displayCode": "Z0",
+                    "displayCodeType": "IATA",
+                    "logo": "https://logos.skyscnr.com/images/airlines/favicon/I).png",
+                    "altId": "I)"
+                  }
+                }
+              ],
+              "isDirectDBookUrl": false,
+              "quoteAge": 3
+            }
+          ],
+          "totalPrice": 287.37
+        }
+      ],
+      "isTransferRequired": false,
+      "destinationImage": "https://content.skyscnr.com/b62fd4346123d1eb9f7525c8f72f2a8a/stock-photo-new-york-city-at-twilight-128894587.jpg",
+      "operatingCarrierSafetyAttributes": [
+        {
+          "carrierID": "-30598",
+          "carrierName": "Norse Atlantic Airways (UK)",
+          "faceMasksCompulsory": null,
+          "aircraftDeepCleanedDaily": null,
+          "attendantsWearPPE": null,
+          "cleaningPacksProvided": null,
+          "foodServiceChanges": null,
+          "safetyUrl": null
+        }
+      ],
+      "flexibleTicketPolicies": []
+    },
+    "pollingCompleted": true
+  }
+}
+
+
+GET
+
+searchFlightEverywhere
+
+Test Endpoint
+App
+Params(9)
+Headers(1)
+Body
+Authorizations
+Query Params
+
+originEntityId
+*
+95673320
+String
+The originEntityId code can be extracted from the Search Airport API in the Flights collection.
+
+destinationEntityId
+(optional)
+String
+The destinationEntityId code can be extracted from the Search Airport API in the Flights collection.
+
+travelDate
+(optional)
+
+mm/dd/yyyy
+Date (yyyy-mm-dd)
+Departure or travel date. Format: YYYY-MM-DD
+
+returnDate
+(optional)
+
+mm/dd/yyyy
+Date (yyyy-mm-dd)
+Return date. Format: YYYY-MM-DD
+
+adults
+(optional)
+Number
+Adults: 15+ years Default value: 1 Ex: 2 for 2 adults
+
+Default: 0
+childAges
+(optional)
+String
+The ages of the children are separated by commas. Eg: Child 1 = < 1 years Child 2 = 14 years
+
+Then childAges = 0,14
+
+Note: Children age should be less then 15 years
+
+cabinClass
+(optional)
+economy
+Enum
+Cabin class Ex: economy Default value: economy
+
+economy: Economy premium_economy: Premium Economy business: Business first: First
+
+journeyType
+(optional)
+one_way
+Enum
+One Way = one_way Round Trip = round_trip
+
+currency
+(optional)
+USD
+String
+currency can be retrieved from api/v1/getConfig endpoint(data->currency) Default value: USD Ex: USD
+
+Code Snippets
+Example Responses
+Results
+Target:
+JavaScript
+Client:
+Axios
+
+import axios from 'axios';
+
+const options = {
+  method: 'GET',
+  url: 'https://sky-scrapper.p.rapidapi.com/api/v2/flights/searchFlightEverywhere',
+  params: {
+    originEntityId: '95673320',
+    cabinClass: 'economy',
+    journeyType: 'one_way',
+    currency: 'USD'
+  },
+  headers: {
+    'x-rapidapi-key': 'a7cd1015c3msh11ba2dde2669b91p1c820bjsn7178b8490ac2',
+    'x-rapidapi-host': 'sky-scrapper.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
+
+
+categories
+Travel
+icon
+Air Scraper
+
+GET
+
+searchFlightsWebComplete
+
+Test Endpoint
+App
+Params(16)
+Headers(1)
+Body
+Authorizations
+Query Params
+
+originSkyId
+*
+JFK
+String
+The originSkyId code can be extracted from the Search Airport API in the Flights collection.
+
+destinationSkyId
+*
+MIA
+String
+The destinationSkyId code can be extracted from the Search Airport API in the Flights collection.
+
+originEntityId
+*
+95565058
+String
+The originEntityId code can be extracted from the Search Airport API in the Flights collection.
+
+destinationEntityId
+*
+95673821
+String
+The destinationEntityId code can be extracted from the Search Airport API in the Flights collection.
+
+date
+*
+
+mm/dd/yyyy
+Date (yyyy-mm-dd)
+Departure or travel date. Format: YYYY-MM-DD
+
+returnDate
+(optional)
+
+mm/dd/yyyy
+Date (yyyy-mm-dd)
+Return date. Format: YYYY-MM-DD
+
+cabinClass
+(optional)
+economy
+Enum
+Cabin class Ex: economy Default value: economy
+
+economy: Economy premium_economy: Premium Economy business: Business first: First
+
+adults
+(optional)
+1
+Number
+Adults: 12+ years Default value: 1 Ex: 2
+
+Default: 1
+childrens
+(optional)
+Number
+Children: 2-12 years Default value: 0 Ex: 2
+
+Default: 0
+infants
+(optional)
+Number
+Infants: Under 2 years Default value: 0 Ex: 1
+
+Default: 0
+sortBy
+(optional)
+best
+Enum
+Sort By Ex: best Default value: best
+
+best : Best price_high : Cheapest fastest : Fastest outbound_take_off_time : Outbound Take Off Time outbound_landing_time : Outbound Landing Time return_take_off_time : Return Take Off Time return_landing_time : Return Landinf Time
+
+limit
+(optional)
+Number
+Set a limit on the amount of records. Example: 100
+
+Default: 0
+carriersIds
+(optional)
+String
+Filter the flight itinerary data by the carrier.If there are multiple carriers that need to be passed, they should be passed in comma-separated format. Example: -32672,-31435
+
+currency
+(optional)
+USD
+String
+currency can be retrieved from api/v1/getConfig endpoint(data->currency) Default value: USD Ex: USD
+
+market
+(optional)
+en-US
+String
+market can be retrieved from api/v1/getConfig endpoint(data->market) Default value: en-US Ex: en-US
+
+countryCode
+(optional)
+US
+String
+countryCode can be retrieved from api/v1/getConfig endpoint(data->countryCode) Default value: US Ex: US
+
+Code Snippets
+Example Responses
+Results
+Target:
+JavaScript
+Client:
+Axios
+
+import axios from 'axios';
+
+const options = {
+  method: 'GET',
+  url: 'https://sky-scrapper.p.rapidapi.com/api/v2/flights/searchFlightsWebComplete',
+  params: {
+    originSkyId: 'JFK',
+    destinationSkyId: 'MIA',
+    originEntityId: '95565058',
+    destinationEntityId: '95673821',
+    cabinClass: 'economy',
+    adults: '1',
+    sortBy: 'best',
+    currency: 'USD',
+    market: 'en-US',
+    countryCode: 'US'
+  },
+  headers: {
+    'x-rapidapi-key': 'a7cd1015c3msh11ba2dde2669b91p1c820bjsn7178b8490ac2',
+    'x-rapidapi-host': 'sky-scrapper.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}

@@ -1,0 +1,801 @@
+.flight-search-form {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: rgb(54, 55, 58);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: 2rem;
+  position: relative;
+  color: #e8eaed;
+  width: fit-content;
+}
+
+.trip-type-selector {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.trip-type-selector label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #e8eaed;
+}
+
+.trip-type-selector input[type="radio"] {
+  accent-color: #8AB4F8;
+}
+
+.top-controls {
+  margin-bottom: 1.5rem;
+}
+
+.trip-type-group {
+  flex: 1;
+  min-width: 150px;
+}
+
+.control-select {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #6E7276;
+  border-radius: 8px;
+  background: rgb(54, 55, 58);
+  color: #e8eaed;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.control-select:hover {
+  border-color: #8AB4F8;
+}
+
+.control-select:focus {
+  border-color: #8AB4F8;
+}
+
+.control-select.small {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #6E7276;
+  width: auto;
+  min-width: 100px;
+  color: #e8eaed;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.control-select.small:hover {
+  border-color: #8AB4F8;
+}
+
+.control-select option {
+  background: rgb(54, 55, 58);
+  color: #e8eaed;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controls-row {
+  justify-content: flex-start;
+}
+
+.main-inputs-row {
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.dates-row {
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group.trip-type-group,
+.input-group.passengers-input {
+  min-width: auto;
+  width: auto;
+  flex: none;
+}
+
+.controls-row .input-group {
+  flex: none;
+  width: auto;
+}
+
+.airport-input {
+  min-width: 200px;
+  width: auto;
+}
+
+.date-input {
+  min-width: 150px;
+  flex: 1;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 2px solid #6E7276;
+  border-radius: 8px;
+  background: rgb(54, 55, 58);
+  transition: border-color 0.2s;
+  color: #e8eaed;
+}
+
+.input-wrapper.compact {
+  padding: 0.75rem 0.8rem;
+  gap: 0.5rem;
+  border-radius: 6px;
+  width: auto;
+}
+
+.input-wrapper.compact:hover {
+  border-color: #8AB4F8;
+}
+
+.input-wrapper.small {
+  padding: 0.4rem 0.6rem;
+  gap: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid #6E7276;
+}
+
+.input-wrapper.small:hover {
+  border-color: #8AB4F8;
+}
+
+.input-wrapper:hover {
+  border-color: #8AB4F8;
+}
+
+.input-wrapper:focus-within {
+  border-color: #8AB4F8;
+}
+
+.input-wrapper.clickable {
+  cursor: pointer;
+}
+
+.input-icon {
+  color: #BDC1C6;
+  flex-shrink: 0;
+}
+
+.input-icon.compact {
+  color: #BDC1C6;
+  flex-shrink: 0;
+}
+
+.input-icon.small {
+  color: #BDC1C6;
+  flex-shrink: 0;
+}
+
+.input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+  color: #e8eaed;
+}
+
+.input-wrapper.compact input {
+  font-size: 0.9rem;
+  color: #e8eaed;
+}
+
+.input-wrapper.small input {
+  font-size: 0.8rem;
+  color: #e8eaed;
+}
+
+/* Only disable pointer events for airport inputs where we want wrapper clicks */
+/* .airport-input .input-wrapper input {
+  pointer-events: none;
+} */
+
+/* Ensure passenger inputs and date inputs remain clickable */
+.passengers-input .input-wrapper input,
+.date-input .input-wrapper input {
+  pointer-events: auto;
+}
+
+.input-wrapper input::placeholder {
+  color: #BDC1C6;
+}
+
+.cabin-select {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #6E7276;
+  border-radius: 8px;
+  background: rgb(54, 55, 58);
+  color: #e8eaed;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cabin-select:hover {
+  border-color: #8AB4F8;
+}
+
+.cabin-select:focus {
+  border-color: #8AB4F8;
+}
+
+.swap-button {
+  background: rgb(54, 55, 58);
+  border: 2px solid #6E7276;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  color: #9aa0a6;
+}
+
+.swap-button.compact {
+  width: 36px;
+  height: 36px;
+}
+
+.swap-button:hover {
+  background: rgb(60, 61, 64);
+  border-color: #8AB4F8;
+  color: #8AB4F8;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgb(54, 55, 58);
+  border: 1px solid #6E7276;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #6E7276;
+  transition: background 0.2s;
+  color: #e8eaed;
+}
+
+.suggestion-item:hover {
+  background: rgb(60, 61, 64);
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.airport-info {
+  flex: 1;
+}
+
+.airport-name {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.airport-location {
+  color: #BDC1C6;
+  font-size: 0.9rem;
+}
+
+.airport-code {
+  font-weight: bold;
+  color: #8AB4F8;
+  font-size: 1.1rem;
+}
+
+.passengers-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 280px;
+  background: rgb(54, 55, 58);
+  border: 1px solid #6E7276;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  padding: 1rem;
+  margin-top: 4px;
+}
+
+.passenger-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #6E7276;
+  color: #e8eaed;
+}
+
+.passenger-row:last-child {
+  border-bottom: none;
+}
+
+.passenger-info {
+  flex: 1;
+}
+
+.passenger-type {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.passenger-desc {
+  color: #BDC1C6;
+  font-size: 0.9rem;
+}
+
+.passenger-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.passenger-controls button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #6E7276;
+  border-radius: 50%;
+  background: rgb(54, 55, 58);
+  color: #e8eaed;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.passenger-controls button:hover:not(:disabled) {
+  background: rgb(60, 61, 64);
+  border-color: #8AB4F8;
+}
+
+.passenger-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.passenger-controls span {
+  font-weight: 500;
+  min-width: 20px;
+  text-align: center;
+}
+
+.search-button {
+  background: #8AB4F8;
+  color: #202124;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.2s;
+  min-width: 180px;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 12px rgba(138, 180, 248, 0.3);
+}
+
+.search-button.compact {
+  position: static;
+  transform: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  min-width: auto;
+  margin-left: 0.75rem;
+}
+
+.search-button:hover:not(:disabled) {
+  background: #7aa7f7;
+  box-shadow: 0 6px 16px rgba(138, 180, 248, 0.4);
+}
+
+.search-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Date display and passenger text styles */
+.date-display {
+  font-size: 0.85rem;
+  color: #9aa0a6;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+}
+
+.passenger-text {
+  font-size: 0.9rem;
+  color: #e8eaed;
+  white-space: nowrap;
+}
+
+.passenger-text.small {
+  font-size: 0.8rem;
+  color: #e8eaed;
+  white-space: nowrap;
+}
+
+.date-input input[type="date"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.date-input .input-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.date-input .input-wrapper:hover .date-display {
+  color: #8AB4F8;
+}
+
+.airports-row {
+  margin-bottom: 1.5rem;
+}
+
+.dates-row {
+  margin-bottom: 3rem;
+}
+
+.top-controls {
+  margin-bottom: 1.5rem;
+}
+
+.trip-type-group {
+  flex: 1;
+  min-width: 150px;
+}
+
+.control-select {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #6E7276;
+  border-radius: 8px;
+  background: rgb(54, 55, 58);
+  color: #e8eaed;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.control-select:focus {
+  border-color: #8AB4F8;
+}
+
+.control-select option {
+  background: rgb(54, 55, 58);
+  color: #e8eaed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flight-search-form {
+    width: 100%;
+    max-width: none;
+    margin: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .search-form {
+    gap: 0.75rem;
+  }
+
+  /* Keep first row as is */
+  .controls-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /* Second row: airports side by side 50/50, hide swap button */
+  .main-inputs-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .airport-input {
+    flex: 1;
+    min-width: 0;
+    width: 50%;
+  }
+
+  .input-wrapper.compact {
+    padding: 0.5rem 0.6rem;
+    gap: 0.4rem;
+    width: 100%;
+  }
+
+  .swap-button.compact {
+    display: none;
+  }
+
+  /* Third row: dates side by side 50/50 */
+  .dates-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .date-input {
+    flex: 1;
+    min-width: 0;
+    width: 50%;
+  }
+
+  .search-button {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 140px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    z-index: 10;
+  }
+}
+
+@media (max-width: 480px) {
+  .flight-search-form {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5rem;
+    border-radius: 0;
+  }
+
+  .search-form {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  /* First row controls */
+  .controls-row {
+    gap: 0.25rem;
+  }
+
+  .control-select.small {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.4rem;
+    min-width: 70px;
+  }
+
+  .input-wrapper.small {
+    padding: 0.25rem 0.4rem;
+  }
+
+  /* Second row: airports side by side 50/50 */
+  .main-inputs-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .airport-input {
+    flex: 1;
+    min-width: 0;
+    width: 50%;
+  }
+
+  .input-wrapper.compact {
+    padding: 0.4rem 0.5rem;
+    gap: 0.3rem;
+    width: 100%;
+  }
+
+  .swap-button.compact {
+    display: none;
+  }
+
+  /* Third row: dates side by side 50/50 */
+  .dates-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .date-input {
+    flex: 1;
+    min-width: 0;
+    width: 50%;
+  }
+
+  /* Search button floating */
+  .search-button {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 1rem);
+    max-width: 200px;
+    min-width: unset;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+    z-index: 10;
+  }
+
+  .input-wrapper input {
+    font-size: 0.85rem;
+  }
+
+  .input-wrapper.compact input {
+    font-size: 0.85rem;
+  }
+
+  .input-wrapper.small input {
+    font-size: 0.75rem;
+  }
+}
+
+/* Passenger selector styles */
+.passenger-selector {
+  width: 60px;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+}
+
+.passengers-input {
+  flex: 0 0 60px;
+}
+
+/* DatePicker Custom Styles */
+.date-picker-input {
+  background: transparent !important;
+  border: none !important;
+  color: #e8eaed !important;
+  font-size: 0.9rem !important;
+  width: 100% !important;
+  outline: none !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+}
+
+.date-picker-input::placeholder {
+  color: #9aa0a6 !important;
+}
+
+/* React DatePicker Dark Theme Overrides */
+.react-datepicker {
+  background-color: rgb(54, 55, 58) !important;
+  border: 2px solid #6E7276 !important;
+  border-radius: 8px !important;
+  font-family: inherit !important;
+}
+
+.react-datepicker__header {
+  background-color: rgb(60, 61, 64) !important;
+  border-bottom: 1px solid #6E7276 !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name,
+.react-datepicker__day {
+  color: #e8eaed !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: #8AB4F8 !important;
+  color: #202124 !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: #8AB4F8 !important;
+  color: #202124 !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: rgba(138, 180, 248, 0.3) !important;
+  color: #e8eaed !important;
+}
+
+.react-datepicker__navigation {
+  border: none !important;
+}
+
+.react-datepicker__navigation--previous {
+  border-right-color: #e8eaed !important;
+}
+
+.react-datepicker__navigation--next {
+  border-left-color: #e8eaed !important;
+}
+
+.react-datepicker__day--disabled {
+  color: #6E7276 !important;
+  cursor: not-allowed !important;
+}
+
+.react-datepicker__day--outside-month {
+  color: #6E7276 !important;
+}
+
+.react-datepicker__triangle {
+  border-bottom-color: rgb(54, 55, 58) !important;
+}
+
+.react-datepicker-popper {
+  z-index: 1000 !important;
+}
+
+.search-row {
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.search-button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background: #1565c0;
+}
+
+.search-button:active {
+  background: #0d47a1;
+}

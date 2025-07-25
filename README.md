@@ -1,0 +1,1 @@
+This web can be tested using "npm run dev" with dummy flights data or you can create an .env file following the .env.example structure to use your own API Key from https://rapidapi.com/apiheya/api/sky-scrapper
